@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Vote from "./Vote";
 
 
 const  App= ()=> {
@@ -14,16 +15,24 @@ const  App= ()=> {
     'Programming without an extremely heavy use of console.log is same as if a doctor would refuse to use x-rays or blood tests when diagnosing patients.',
     'The only way to go fast, is to go well.'
   ]
-
+  const [votes,setVotes]=useState(Array(anecdotes.length).fill(0));
+  console.log(votes)
   let eventHandler=() =>{
     setSelected(
       Math.floor(Math.random()*anecdotes.length)
     )
   }
+  const voteHandler=()=>{
+    const copy =[...votes];
+    copy[selected]++;
+    setVotes(copy);
+  }
 
   return (
     <div>
       {anecdotes[selected]}<br/>
+      <Vote votes={votes[selected]}/>
+      <button onClick={voteHandler}>vote</button>
       <button onClick={eventHandler}>next anecodote</button>
     </div>
   );
