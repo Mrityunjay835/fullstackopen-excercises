@@ -10,6 +10,7 @@ const Content = ({subPart}) => {
             <Part key={item.id}  name={item.name} exercises={item.exercises}/>
         )
     }
+
     </>
   )
 }
