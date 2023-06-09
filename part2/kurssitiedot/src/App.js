@@ -47,9 +47,11 @@ function App() {
     }
   ]
   return (
-   <div>{
-    course.map((item)=>
-      <Course course={item}/>
+   <div>
+    <h1>Web development curriculum</h1>
+    {
+    course.map((item,index)=>
+      <Course key={index} course={item}/>
     )
     }
    </div>
