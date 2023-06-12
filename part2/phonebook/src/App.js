@@ -7,13 +7,15 @@ const App=()=> {
   const addPerson=(event)=>{
     event.preventDefault();
     console.log("working form");
-     setPersons(persons.concat({name: personName}));
+    persons.find(item=>item.name===personName)?alert(`${personName} is already added to phonebook`):setPersons(persons.concat({name: personName}));
   }
 
   const nameHandler=(event)=>{
     console.log(event.target.value);
     setPersonName(event.target.value);
   }
+
+
 
   return (
     <div>
