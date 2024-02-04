@@ -8,7 +8,7 @@ public class CompanyportfolioApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CompanyportfolioApplication.class, args);
-		System.out.println("I am working");
+		System.out.println("I am working with demo");
 	}
 
 }
